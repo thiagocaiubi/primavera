@@ -1,3 +1,7 @@
+# DEBT
+
+ - Learn how to unit test all this stuff, then you can do it for real
+
 # Run project
 
 	mvn jetty:run
