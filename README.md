@@ -1,6 +1,10 @@
 # Run project
 
 	mvn jetty:run
+	
+# Debug project
+	./debug-jetty.sh
+Connect to port 4000 as a remote application
 
 # Test
 	GET http://localhost:8080/primavera/booksearch/authors.xml
