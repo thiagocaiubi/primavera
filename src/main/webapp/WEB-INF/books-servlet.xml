@@ -3,11 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:oxm="http://www.springframework.org/schema/oxm"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-				http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		        http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
-	<context:component-scan base-package="com.caiubi.primavera.rest" />
+	<context:component-scan base-package="com.caiubi.primavera" />
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="1" />
@@ -27,7 +29,7 @@
 				</bean>
 			</list>
 		</property>
-		<property name="ignoreAcceptHeader" value="true" />
+		<property name="ignoreAcceptHeader" value="false" />
 	</bean>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -35,4 +37,17 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- MONGO -->
+	
+	<mongo:mongo host="localhost" port="27017" />
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="caiubi" />
+		<!-- constructor-arg name="defaultCollectionName" value="surf" / -->
+	</bean>
+
+	<!-- To translate any MongoExceptions thrown in @Repository annotated classes -->
+	<context:annotation-config />
 </beans>

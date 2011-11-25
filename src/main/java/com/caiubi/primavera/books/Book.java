@@ -3,19 +3,32 @@ package com.caiubi.primavera.books;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.util.Assert;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@Document
 @XStreamAlias("book")
 public class Book {
-	
+
+	@Id
+	private String id;
 	private String isbn;
 	private String title;
 	private int edition;
 	private int pages;
 	private String published;
-	private List<Author> authors;
+	private List<Author> authors = new LinkedList<Author>();
 	private Publisher publisher;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getIsbn() {
 		return isbn;
 	}
@@ -57,5 +70,12 @@ public class Book {
 	}
 	public int getEdition() {
 		return edition;
+	}
+	public void addAuthors(Author... authors) {
+		Assert.notNull(authors, "At least one author must be assigned to a book");
+		List<Author> existingAuthors = getAuthors();
+		for (Author author : authors) {
+			existingAuthors.add(author);
+		}
 	}
 }
