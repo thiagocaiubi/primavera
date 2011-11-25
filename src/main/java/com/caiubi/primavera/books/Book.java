@@ -73,9 +73,8 @@ public class Book {
 	}
 	public void addAuthors(Author... authors) {
 		Assert.notNull(authors, "At least one author must be assigned to a book");
-		List<Author> existingAuthors = getAuthors();
 		for (Author author : authors) {
-			existingAuthors.add(author);
+			this.authors.add(author);
 		}
 	}
 }
