@@ -1,4 +1,4 @@
-package com.stupidjavatricks.restexample;
+package com.caiubi.primavera.rest;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.stupidjavatricks.books.Author;
-import com.stupidjavatricks.books.Book;
+import com.caiubi.primavera.books.Author;
+import com.caiubi.primavera.books.Book;
 
 @Controller
 public class BookServiceController {

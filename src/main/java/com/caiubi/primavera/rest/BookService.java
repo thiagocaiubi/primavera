@@ -1,9 +1,9 @@
-package com.stupidjavatricks.restexample;
+package com.caiubi.primavera.rest;
 
 import java.util.List;
 
-import com.stupidjavatricks.books.Author;
-import com.stupidjavatricks.books.Book;
+import com.caiubi.primavera.books.Author;
+import com.caiubi.primavera.books.Book;
 
 public interface BookService {
 	public Book getBookByIsbn(String isbn);

@@ -1,4 +1,4 @@
-package com.stupidjavatricks.books;
+package com.caiubi.primavera.books;
 
 import java.util.LinkedList;
 import java.util.List;

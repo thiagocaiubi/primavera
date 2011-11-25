@@ -1,4 +1,4 @@
-package com.stupidjavatricks.books;
+package com.caiubi.primavera.books;
 
 import com.google.common.base.Objects;
 import com.thoughtworks.xstream.annotations.XStreamAlias;

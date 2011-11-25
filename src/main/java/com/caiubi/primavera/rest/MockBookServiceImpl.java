@@ -1,4 +1,4 @@
-package com.stupidjavatricks.restexample;
+package com.caiubi.primavera.rest;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,13 +14,13 @@ import java.util.Map;
 import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.stereotype.Service;
 
+import com.caiubi.primavera.books.Address;
+import com.caiubi.primavera.books.Author;
+import com.caiubi.primavera.books.Book;
+import com.caiubi.primavera.books.Publisher;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.stupidjavatricks.books.Address;
-import com.stupidjavatricks.books.Author;
-import com.stupidjavatricks.books.Book;
-import com.stupidjavatricks.books.Publisher;
 import com.thoughtworks.xstream.XStream;
 
 
